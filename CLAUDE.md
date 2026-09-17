@@ -32,7 +32,14 @@ Bloco de configuração no topo do `app.js`: `FONE`, `CHAVE_PIX`, `PIX_LABEL`, `
 
 ## Dados desta lista
 
-- **Contato / PIX:** Thaís Fagundes — `+55 27 99254-6458`. A chave PIX **é o celular**.
+- **Contato:** Thaís Fagundes — WhatsApp `+55 27 99254-6458` (constante `FONE`).
+- **PIX: é o CPF**, não o celular (mudou em 17/09/2026). `CHAVE_PIX` guarda só os dígitos
+  (`19931010711`) porque é o que o botão copia e o que cola limpo no app do banco;
+  `PIX_LABEL` guarda a versão formatada (`199.310.107-11`), que é o que aparece na tela.
+  O rótulo do cartão no `renderEstaticos()` diz "Chave PIX (CPF)" — se a chave mudar de tipo,
+  esse texto tem que mudar junto.
+  O usuário foi avisado de que a página é pública e o CPF fica exposto; optou por manter.
+  Alternativa, se mudarem de ideia: chave aleatória do PIX, que não expõe documento.
 - **29 itens**, todos com link do Mercado Livre escolhido pelo casal.
   Os links foram **limpos** dos parâmetros de tracking (`#polycard_client`, `tracking_id`,
   `ad_click_id` etc.) — ficou só o caminho canônico do produto. Ao adicionar item novo,
@@ -150,6 +157,18 @@ Exceção: `--text-2/3/4`, os três tons de texto secundário derivados do ramp 
 O bloco `:root` do Organic é cópia fiel do handoff: retoque a camada da página, não os tokens.
 
 As fontes entram por `<link>` no `index.html` (com o peso 500 do Figtree, usado nos rótulos).
+
+### Foto do casal
+
+`foto.jpg` (1200×1600, ~370 KB) fica no cabeçalho, à direita do texto no desktop e empilhada
+no celular. É **retângulo arredondado**, não círculo: a foto é de corpo inteiro e um recorte
+circular deixaria os rostos minúsculos.
+
+O `object-position: center 22%` existe porque o centro geométrico de uma foto de corpo inteiro
+cai na altura da cintura — sem isso o enquadramento corta as cabeças. No mobile
+(`max-width: 860px`) o recorte fica `4 / 5` com `18%`, senão um retrato 3/4 ocuparia a tela
+toda antes de a lista aparecer. **Ao trocar a foto, reveja esses dois valores**: eles são
+específicos deste enquadramento.
 
 ## Copy — o que não pode sumir
 

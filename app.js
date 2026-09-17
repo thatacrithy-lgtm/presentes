@@ -7,8 +7,8 @@
                         Passo a passo em reservas.gs.
    =================================================================== */
 const FONE         = '5527992546458';
-const CHAVE_PIX    = '+5527992546458';
-const PIX_LABEL    = '+55 27 99254-6458';   // como a chave aparece na tela
+const CHAVE_PIX    = '19931010711';         // CPF só com dígitos: cola limpo no app do banco
+const PIX_LABEL    = '199.310.107-11';      // como a chave aparece na tela
 const PIX_DONO     = 'Thaís Fagundes';
 const RESERVAS_URL = 'https://script.google.com/macros/s/AKfycbx6wLQPFVaGo3J4PoRG18VePpYULs40_n3Na7GMh8ZMp1eOQX2OGJmaurTjqOxQiM4/exec';
 
@@ -427,7 +427,7 @@ function renderEstaticos(){
   let html = '';
   if (CHAVE_PIX) {
     html += `<div class="pix-card">
-      <span class="pix-rotulo">Chave PIX (celular)</span>
+      <span class="pix-rotulo">Chave PIX (CPF)</span>
       <span class="pix-chave">${esc(PIX_LABEL || CHAVE_PIX)}</span>
       <span class="pix-dono">${esc(PIX_DONO)}</span>
     </div>

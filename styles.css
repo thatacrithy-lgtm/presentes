@@ -110,7 +110,29 @@ body { min-height: 100vh; padding: 0 20px 88px; }
 .wrap { max-width: 1060px; margin: 0 auto; }
 
 /* — header — */
-.header { padding: 60px 0 44px; display: grid; gap: 22px; justify-items: start; }
+/* Duas colunas no desktop: texto à esquerda, foto à direita. A foto é vertical
+   (retrato), então usa canto arredondado em vez de círculo — um círculo cortaria
+   quase tudo e deixaria os rostos minúsculos. */
+.header {
+  padding: 60px 0 44px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 44px;
+  align-items: center;
+}
+.header-txt { display: grid; gap: 22px; justify-items: start; }
+.header-foto { margin: 0; }
+.header-foto img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  /* Puxa o enquadramento pra cima: numa foto de corpo inteiro, o centro
+     geométrico cai na altura da cintura, não dos rostos. */
+  object-position: center 22%;
+  border-radius: var(--radius-card);
+  border: 6px solid var(--color-surface);
+  box-shadow: var(--shadow-lg);
+}
 .badge-data {
   display: flex; align-items: center; gap: 9px;
   background: var(--color-accent-100); color: var(--color-accent-800);
@@ -393,6 +415,18 @@ select.campo { padding: 11px 16px; font-weight: 600; cursor: pointer; }
   font-size: 14px; color: var(--text-3);
 }
 .rodape strong { color: var(--color-text); }
+
+/* — header em telas estreitas — */
+@media (max-width: 860px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 40px;
+  }
+  /* Empilhado, um retrato 3/4 ocuparia a tela inteira antes de a lista aparecer.
+     Corte mais baixo e enquadramento um pouco mais alto resolvem. */
+  .header-foto img { aspect-ratio: 4 / 5; object-position: center 18%; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
