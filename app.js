@@ -10,7 +10,7 @@ const FONE         = '5527992546458';
 const CHAVE_PIX    = '+5527992546458';
 const PIX_LABEL    = '+55 27 99254-6458';   // como a chave aparece na tela
 const PIX_DONO     = 'Thaís Fagundes';
-const RESERVAS_URL = '';                    // ← cole aqui a URL /exec do Apps Script
+const RESERVAS_URL = 'https://script.google.com/macros/s/AKfycbx6wLQPFVaGo3J4PoRG18VePpYULs40_n3Na7GMh8ZMp1eOQX2OGJmaurTjqOxQiM4/exec';
 
 /* Como o casal é chamado nos textos automáticos (WhatsApp, avisos). */
 const CASAL = 'Tata e Tutu';

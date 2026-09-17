@@ -102,13 +102,14 @@ sincronização — leia a seção abaixo antes de mexer nela.
 
 ## Reserva compartilhada
 
-**Ainda não está ativa**: `RESERVAS_URL` está vazia, então a marcação vale só no navegador
-de quem acessa. Para ligar, siga o cabeçalho do `reservas.gs` e cole a URL `/exec` no topo
-do `app.js`.
+**Está ativa** desde 17/09/2026: `RESERVAS_URL` no `app.js` aponta para o Web App publicado,
+e a planilha vive no Drive de uma conta Google **pessoal (Gmail)** — Workspace corporativo dá
+conflito de conta ao abrir o editor do Apps Script.
 
-A planilha e o Apps Script precisam ficar numa **conta Google pessoal (Gmail) do casal** —
-Workspace corporativo dá conflito de conta ao abrir o editor. Foi exatamente o que
-aconteceu no projeto do Matheus.
+Endpoint verificado no dia da publicação: o `GET` da URL `/exec` responde
+`{"ok":true,"reservas":[]}` sem pedir login — é esse o teste rápido quando algo parecer errado.
+Se pedir login ou devolver 401, a implantação saiu com "Quem pode acessar" diferente de
+"Qualquer pessoa".
 
 Dois conjuntos de ids, e a distinção entre eles é o que impede um visitante de desmarcar a
 escolha de outro:
