@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5ead8">
+<title>Chá de casa nova da Tata e do Tutu</title>
+<meta name="description" content="Lista do chá de casa nova da Tata e do Tutu. Escolhe um item, marca que é teu, ou manda um PIX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="header">
+    <div class="badge-data">
+      <span class="badge-dot"></span>
+      Chá de casa nova · Tata &amp; Tutu
+    </div>
+    <h1>A gente tá montando a casa do zero.</h1>
+    <p class="intro">Mudança nova, armário vazio e aquela lista infinita de coisas que a gente só lembra que existe na hora que precisa. Se quiser fazer parte dessa fase com a gente, escolhe um item aqui embaixo — deixamos link de tudo pra facilitar. <strong>Não tem item pequeno demais.</strong> Um jogo de copos alegra a casa tanto quanto uma televisão.</p>
+    <div class="ctas">
+      <a href="#lista" class="pill pill-lg pill-primary">Ver a lista</a>
+      <a href="#pix" class="pill pill-lg pill-secondary">Prefiro mandar PIX</a>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num" id="stat-total">—</div>
+      <div class="stat-label">itens na lista</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num sage" id="stat-reservados">0</div>
+      <div class="stat-label" id="stat-reservados-label">já escolhidos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-destaque">—</div>
+      <div class="stat-label" id="stat-destaque-label">—</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-comodos">—</div>
+      <div class="stat-label">cômodos pra equipar do zero</div>
+    </div>
+  </div>
+
+  <section class="lista" id="lista">
+
+    <div class="lista-head">
+      <h2>A lista</h2>
+      <button type="button" class="btn-surpreenda" id="surpreenda">Me surpreenda →</button>
+    </div>
+
+    <div class="controles">
+      <div class="controles-linha">
+        <input type="search" class="campo" id="busca" placeholder="Buscar item…" aria-label="Buscar item">
+        <select class="campo" id="ordem" aria-label="Ordenar a lista">
+          <option value="comodo">Agrupar por cômodo</option>
+          <option value="barato">Do mais barato</option>
+          <option value="caro">Do mais caro</option>
+        </select>
+        <button type="button" class="campo toggle" id="esconder" aria-pressed="false">
+          <span class="switch" aria-hidden="true"></span>
+          Esconder já escolhidos
+        </button>
+      </div>
+      <div class="faixas" id="faixas" role="group" aria-label="Filtrar por faixa de preço"></div>
+    </div>
+
+    <div id="aviso" aria-live="polite"></div>
+    <div id="sugestao"></div>
+    <div id="grupos"></div>
+
+  </section>
+
+  <section class="jatem" id="jatem-box">
+    <span class="jatem-kicker">Já temos em casa</span>
+    <div class="jatem-pills" id="jatem" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+    <span class="jatem-nota">Esses aqui já estão resolvidos 😄</span>
+  </section>
+
+  <section class="pix" id="pix">
+    <div class="pix-txt">
+      <h2>Ou manda um PIX e finge que escolheu com muito carinho</h2>
+      <p>Qualquer valor ajuda — sério, qualquer um. Vários PIX pequenos viram a televisão. E se quiser dividir um item mais caro com alguém, é só combinar com a gente no WhatsApp.</p>
+    </div>
+    <div class="pix-linha" id="pix-linha"></div>
+  </section>
+
+  <footer class="rodape">
+    <span>Feito pra facilitar a vida de quem quis ajudar. Obrigado, de verdade. — <strong>Tata &amp; Tutu</strong></span>
+    <span>Os links são só sugestão. Compra onde for mais barato.</span>
+  </footer>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
