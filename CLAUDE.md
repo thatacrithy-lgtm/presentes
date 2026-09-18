@@ -40,11 +40,14 @@ Bloco de configuração no topo do `app.js`: `FONE`, `CHAVE_PIX`, `PIX_LABEL`, `
   esse texto tem que mudar junto.
   O usuário foi avisado de que a página é pública e o CPF fica exposto; optou por manter.
   Alternativa, se mudarem de ideia: chave aleatória do PIX, que não expõe documento.
-- **29 itens**, todos com link do Mercado Livre escolhido pelo casal.
+- **33 itens**, todos com link do Mercado Livre escolhido pelo casal. Os 4 últimos
+  (kit bowl de cerâmica, fatiador + centrífuga, mixer, assadeiras de vidro) chegaram
+  em 18/09/2026, depois da primeira publicação.
   Os links foram **limpos** dos parâmetros de tracking (`#polycard_client`, `tracking_id`,
   `ad_click_id` etc.) — ficou só o caminho canônico do produto. Ao adicionar item novo,
   faça o mesmo: link comprido de busca quebra e expira.
-- **26 dos 29 itens têm preço real**, lido das páginas do Mercado Livre em 17/09/2026.
+- **30 dos 33 itens têm preço real**, lido das páginas do Mercado Livre (26 em 17/09/2026,
+  mais 4 em 18/09/2026).
   Não são estimativas — é o valor anunciado no dia. O card mostra "aprox." ao lado porque
   preço de marketplace muda toda hora.
 - **3 itens ficaram em `preco: null`** e caem na faixa "A combinar": `kitpia`, `kitlavabo`
@@ -89,7 +92,7 @@ Os ids do objeto `U` são os mesmos `id` de `ITENS`, então o retorno mapeia dir
 
 ### Cômodos
 
-`Cozinha` (16) · `Quarto e sala` (5) · `Área de serviço` (4) · `Banheiro` (2) · `Itens grandes` (2).
+`Cozinha` (20) · `Quarto e sala` (5) · `Área de serviço` (4) · `Banheiro` (2) · `Itens grandes` (2).
 A ordem de exibição vem de `ORDEM_COMODOS`.
 
 ## Diferenças em relação ao `../presentes`
